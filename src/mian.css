@@ -1,0 +1,320 @@
+/* 初始化样式 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul,
+li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+}
+body {
+	background: #f3f6f8;
+}
+.icon {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+.clearfix:after {
+	content: "."; /**/ /*内容为“.”就是一个英文的句号而已。也可以不写。*/
+	display: block; /**/ /*加入的这个元素转换为块级元素。*/
+	clear: both; /**/ /*清除左右两边浮动。*/
+	visibility: hidden; /**/ /*可见度设为隐藏。注意它和display:none;是有区别的。visibility:hidden;仍然占据空间，只是看不到而已；*/
+	line-height: 0; /**/ /*行高为0；*/
+	height: 0; /**/ /*高度为0；*/
+	font-size: 0; /**/ /*字体大小为0；*/
+}
+/* 布局开始 */
+.container {
+	display: flex;
+}
+.container .leftBar {
+	position: fixed;
+	padding: 0 24px;
+	width: 248px;
+	z-index: 100;
+	height: 100vh;
+	display: flex;
+	background: #30333c;
+	box-sizing: border-box;
+	flex-direction: column;
+	color: #6b7386;
+}
+@media (max-width: 500px) {
+	.container .leftBar {
+		display: none;
+	}
+}
+.title {
+	height: 50px;
+	color: #fff;
+	font-size: 18px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.leftBar .item,
+.leftBar .message {
+	position: relative;
+	height: 48px;
+	line-height: 46px;
+	border-top: 2px solid rgba(126, 126, 126, 0.2);
+	border-bottom: 2px solid rgba(126, 126, 126, 0.2);
+}
+
+.leftBar .item a,
+.leftBar .message a {
+	color: #fff;
+}
+
+.leftBar .item .iconfonts,
+.leftBar .message .iconfonts {
+	margin-right: 6px;
+}
+
+.leftBar .item .chars {
+	position: absolute;
+	height: 25px;
+	right: 0;
+	top: 11px;
+	border-right: 3px solid #6b7386;
+	border-radius: 1px;
+}
+
+.leftBar .item.active .chars,
+.leftBar .item:hover .chars {
+	border-right: 3px solid #3a85ff;
+}
+
+.leftBar .message {
+	position: fixed;
+	z-index: 100;
+	bottom: 1px;
+	width: 200px;
+	background: #30333c;
+}
+
+.leftBar .message .arrow {
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.leftBar .message .arrow .icon {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.leftBar .nav-item {
+	max-height: 100vh;
+	overflow-y: scroll;
+}
+/* 控制滚动条 */
+.nav .nav-item::-webkit-scrollbar {
+	width: 3px;
+}
+
+.nav .nav-item::-webkit-scrollbar-thumb {
+	background-color: #494f5e;
+	border-radius: 0;
+}
+
+.nav .nav-item::-webkit-scrollbar-track {
+	border-radius: 0;
+}
+
+.nav-item ul li {
+	height: 32px;
+	line-height: 32px;
+	padding-left: 20px;
+}
+
+.nav-item li,
+.nav-item ul {
+	box-sizing: border-box;
+	min-height: 100%;
+}
+
+.nav-item ul {
+	overflow: hidden;
+}
+
+.nav-item li a {
+	text-decoration: none;
+	font-size: 14px;
+	display: inline-block;
+	width: 100%;
+	color: #6b7386;
+}
+
+.nav-item li.active,
+.nav-item li:hover {
+	cursor: pointer;
+}
+
+.nav-item li.active a,
+.nav-item li:hover a {
+	color: #fff;
+}
+
+/* 右边模块 */
+.main {
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 248px;
+}
+@media (max-width: 500px) {
+	.main {
+		padding-left: 0;
+	}
+}
+.main .mainContent {
+	max-width: 1200px;
+	margin: 0 35.6px;
+	display: flex;
+	flex-direction: column;
+}
+@media (max-width: 500px) {
+	.main .mainContent {
+		margin: 4vw;
+	}
+}
+
+/* 搜索开始 */
+.search {
+	margin: 20px;
+	height: 80px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.searchForm {
+	display: flex;
+	justify-content: center;
+	flex: auto;
+}
+.searchForm > input {
+	width: 80%;
+	margin-right: 10px;
+	height: 40px;
+	padding: 0 10px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+}
+.searchForm > button {
+	white-space: nowrap;
+	padding: 0 28px;
+	border: none;
+	border-radius: 4px;
+	background-color: #3273dc;
+	color: #fff;
+	font-size: 16px;
+}
+
+/* 搜索结束 */
+
+.fe {
+	overflow: hidden;
+	max-width: 1200px;
+	background: #fff;
+	margin: 20px 30px;
+	padding-bottom: 20px;
+}
+@media (max-width: 500px) {
+	.fe {
+		max-width: 100vw;
+		margin: 0;
+	}
+}
+.fe .sub-category > div {
+	padding: 12px 0 0 2.1%;
+	font-size: 18px;
+	white-space: nowrap;
+	margin: 0;
+}
+
+.fe .item {
+	height: 102px;
+	border-radius: 6px;
+	background: #fff;
+	padding: 10px;
+	width: 30%;
+	min-width: 200px;
+	margin: 20px 1.66% 0;
+	float: left;
+	overflow: hidden;
+	border: 1px solid #e4ecf3;
+	box-shadow: 1px 2px 3px #f2f6f8;
+}
+
+@media (max-width: 1024px) {
+	.fe .item {
+		width: 46%;
+	}
+}
+@media (max-width: 768px) {
+	.fe .item {
+		width: 97%;
+	}
+}
+@media (max-width: 500px) {
+	.fe .item {
+		width: 40%;
+		min-width: 100px;
+		margin-left: 6%;
+		margin-top: 12px;
+	}
+}
+
+.fe .item .logo {
+	height: 40px;
+	position: relative;
+	font-size: 14px;
+	font-weight: 700;
+	color: #3273dc;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0 0.1rem;
+}
+.fe .item .logo img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+.fe .item .desc {
+	color: gray;
+	font-size: 12px;
+	padding-top: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+
+.addition {
+	height: 102px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: #3a85ff;
+}
+
+.addition .addIcon .icon {
+	font-size: 20px;
+}
+.addition p:nth-child(2) {
+	margin-top: 10px;
+	font-weight: 700;
+}
